@@ -27,3 +27,11 @@ Le projet consiste à développer une application de gestion de tâches (Todo Ap
 ## Design
 
 Le design de l'application est disponible sur Figma : [Lien vers le Figma](<https://www.figma.com/design/Um1pS6yhk8yGf4cH6KcvTs/LOW-CODE-TODO-LIST-APP-AESTHETIC-(Community)?node-id=0-1&node-type=canvas&t=MCVXHR3SMbncy1N5-0>).
+
+## Branches
+
+creer des branches analogues a ce level-one
+
+```bash
+git checkout -b level-one-prenom
+```
