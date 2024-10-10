@@ -3,19 +3,22 @@ import {StyleSheet, Text, View} from 'react-native';
 type Props = {
   title: string;
   subTitle: string;
+  isCompleted?: boolean;
 };
-const TodoItems = ({title, subTitle}: Props) => {
+const TodoItems = ({title, subTitle, isCompleted}: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.titleStyle}>{title}</Text>
         <Text style={styles.subTitleStyle}>{subTitle}</Text>
       </View>
-      <View style={styles.actionContainer}>
-        <Text style={styles.iconStyle}>Ed</Text>
-        <Text style={styles.iconStyle}>Del</Text>
-        <Text style={styles.iconStyle}>Cple</Text>
-      </View>
+      {!isCompleted ? (
+        <View style={styles.actionContainer}>
+          <Text style={styles.iconStyle}>Ed</Text>
+          <Text style={styles.iconStyle}>Del</Text>
+          <Text style={styles.iconStyle}>Cple</Text>
+        </View>
+      ) : ''}
     </View>
   );
 };
