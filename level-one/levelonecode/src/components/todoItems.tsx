@@ -18,7 +18,7 @@ const TodoItems = ({title, subTitle, isCompleted}: Props) => {
           <Text style={styles.iconStyle}>Del</Text>
           <Text style={styles.iconStyle}>Cple</Text>
         </View>
-      ) : ''}
+      ) : null}
     </View>
   );
 };
