@@ -20,8 +20,8 @@ function App(): React.JSX.Element {
       <StatusBar backgroundColor={'#163C45'} barStyle="light-content" />
       <View style={{flex: 1, backgroundColor: '#554F41'}}>
         <View style={styles.headerContainer}>
-          <Text style={styles.textStyle}>TODO APP</Text>
-          <Text style={styles.textStyle}>C</Text>
+        <Text style={styles.textStyle}>C</Text>
+        <Text style={{...styles.textStyle, paddingLeft: 10}}>Completed Task</Text>
         </View>
         <ScrollView style={{flex: 1, paddingHorizontal: 12}}>
           {Array.from({length: 10}).map((_, i) => (
@@ -29,6 +29,7 @@ function App(): React.JSX.Element {
               title={`Title ${i}`}
               subTitle={`Subtitle ${i}`}
               key={i}
+              isCompleted
             />
           ))}
         </ScrollView>
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: '#163C45',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
   },
