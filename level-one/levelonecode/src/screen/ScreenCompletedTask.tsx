@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import TodoItems from './src/components/todoItems';
+import TodoItems from '../components/todoItems';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -20,8 +20,10 @@ function ScreenCompletedTask(): React.JSX.Element {
       <StatusBar backgroundColor={'#163C45'} barStyle="light-content" />
       <View style={{flex: 1, backgroundColor: '#554F41'}}>
         <View style={styles.headerContainer}>
-        <Text style={styles.textStyle}>C</Text>
-        <Text style={{...styles.textStyle, paddingLeft: 10}}>Completed Task</Text>
+          <Text style={styles.textStyle}>C</Text>
+          <Text style={{...styles.textStyle, paddingLeft: 10}}>
+            Completed Task
+          </Text>
         </View>
         <ScrollView style={{flex: 1, paddingHorizontal: 12}}>
           {Array.from({length: 10}).map((_, i) => (
