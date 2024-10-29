@@ -9,10 +9,27 @@ import {
     
 import React from 'react'
 import TodoItems from '../components/todoItems';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Add} from 'iconsax-react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-type Props = {}
+type RootStackParamList = {
+  AddTask: undefined;
+  IndexScreen: undefined;
+};
 
-const IndexScreen = (props: Props) => {
+type IndexScreenNavigationProp = StackNavigationProp<RootStackParamList, 'IndexScreen'>;
+
+type Props = {
+  navigation: IndexScreenNavigationProp;
+};
+
+const IndexScreen: React.FC<Props> = ({navigation}) => {
+
+  const toAddTask = () => {
+    navigation.navigate('AddTask');
+  };
+
   return (
        <SafeAreaView style={{flex: 1}}>
        <StatusBar backgroundColor={'#163C45'} barStyle="light-content" />
@@ -30,6 +47,14 @@ const IndexScreen = (props: Props) => {
              />
            ))}
          </ScrollView>
+
+        
+                 {/* Floating Action Button */}
+        {/* <TouchableOpacity style={styles.fab} onPress={() => console.log('Button Pressed!')}> */}
+        <TouchableOpacity style={styles.fab} onPress={toAddTask}>
+          {/* <Icon name="add" size={30} color="#fff" /> */}
+          <Add size="32" color="#fff" variant="Bold" /> 
+        </TouchableOpacity>
        </View>
      </SafeAreaView>
   )
@@ -52,5 +77,17 @@ const styles = StyleSheet.create({
          fontSize: 25,
          fontWeight: 'bold',
        },
+       fab: {
+        position: 'absolute',
+        width: 60,
+        height: 60,
+        backgroundColor: '#163C45',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        right: 20,
+        bottom: 20,
+        elevation: 5, // For shadow effect
+      },
      });
      
