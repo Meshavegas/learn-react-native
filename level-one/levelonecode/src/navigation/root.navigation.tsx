@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import IndexScreen from '../screen/IndexScreen';
 import ScreenCompletedTask from '../screen/ScreenCompletedTask';
+import AddTask from '../screen/addTask';
 
 type Props = {};
 const Stack = createStackNavigator();
@@ -11,6 +12,7 @@ const RootNavigation = (props: Props) => {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={IndexScreen} />
       <Stack.Screen name="Complete" component={ScreenCompletedTask} />
+      <Stack.Screen name="AddTask" component={AddTask} />
     </Stack.Navigator>
   );
 };
